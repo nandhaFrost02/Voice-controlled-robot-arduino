@@ -1,0 +1,94 @@
+/*Reciver
+nandha's art work */ 
+int c1,c2,c3,c4;
+void setup()
+{
+pinMode(12,INPUT);
+pinMode(11,INPUT);
+pinMode(10,INPUT);
+pinMode(9,INPUT);
+
+pinMode(7,OUTPUT);
+pinMode(6,OUTPUT);
+pinMode(5,OUTPUT);
+pinMode(4,OUTPUT);
+pinMode(3,OUTPUT);
+Serial.begin(9600);
+Serial.println("  Survillence robot  ");
+Serial.println("		with voice controll ");
+Serial.println("abi anbu");
+Serial.println("Aishwariya");
+Serial.println("Revathi");
+}
+
+void loop()
+{
+c1 = digitalRead(12);
+c2 - digitalRead(11);
+c3 = digitalRead(10);
+c4 = digitalRead(9);
+
+if(c1 == 0 && c2 ==0 && c3 ==0 && c4 ==1) //forward
+{
+  digitalWrite(7, HIGH); 
+  digitalWrite(6, LOW); 
+  digitalWrite(5, HIGH);
+  digitalWrite(4, LOW); 
+  digitalWrite(3, LOW); 
+  delay (600);
+}
+if(c1 == 0 && c2 ==0 && c3 ==1 && c4 ==0)  //reverse
+{
+  digitalWrite(7, LOW);
+ digitalWrite(6, HIGH);
+ digitalWrite(5, LOW); 
+ digitalWrite(4, HIGH);
+ digitalWrite(3, LOW);
+ delay (600);
+}
+if(c1 == 0 && c2 ==0 && c3 ==1 && c4 ==1) //right
+{
+digitalWrite(7, HIGH); 
+digitalWrite(6, LOW);
+digitalWrite(5, LOW);
+digitalWrite(4, HIGH);
+digitalWrite(3, LOW); 
+delay (600);
+}
+if(c1 == 0 && c2 ==1 && c3 ==0 && c4 ==0) //left
+{
+digitalWrite(7, LOW); 
+digitalWrite(6, HIGH);
+digitalWrite(5, HIGH);
+digitalWrite(4, LOW);
+digitalWrite(3, LOW); 
+delay (600);
+}
+if(c1 == 0 && c2 ==1 && c3 ==0 && c4 ==1) //stop
+{
+digitalWrite(7, LOW); 
+digitalWrite(6, LOW);
+digitalWrite(5, LOW);
+digitalWrite(4, LOW);
+digitalWrite(3, LOW); 
+delay (600);
+}
+if(c1 == 0 && c2 ==1 && c3 ==1 && c4 ==0) //Fire
+{
+digitalWrite(7,LOW);
+digitalWrite(6,LOW);
+digitalWrite(5,LOW);
+digitalWrite(4,LOW);
+digitalWrite(3,HIGH);
+delay(600);
+}
+if(c1 == 0 && c2 ==0 && c3 ==0 && c4 ==0) //Pin Stop
+{
+digitalWrite(7,LOW);
+digitalWrite(6,LOW);
+digitalWrite(5,LOW);
+digitalWrite(4,LOW);
+digitalWrite(3,LOW);
+delay(600);
+}
+}
